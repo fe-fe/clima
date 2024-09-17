@@ -14,7 +14,10 @@ function WeatherInfo({ info }: Props) {
       <div className="minibox">
         <div className="flex alc">
           <div className="max">
-            {info.location?.name}, {info.location?.region},{" "}
+            {info.location?.name},{" "}
+            {info.location?.region == info.location?.name
+              ? ""
+              : info.location?.region + ", "}
             {info.location?.country}
           </div>
           <div className="minibox flex alc">
