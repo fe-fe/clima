@@ -5,7 +5,7 @@ import SearchBar from "./components/SearchBar";
 import { useState } from "react";
 import WeatherData from "./components/WeatherData";
 
-const apiKey = "a619ee62c96e43f58b2234852241509";
+const apiKey = "";
 
 function App() {
   const [wData, setWdata] = useState<WeatherData | null>(null);
