@@ -21,7 +21,7 @@ function QualityBar({ quality, name, max }: Props) {
             {quality + "%"}
           </div>
           <div
-            className={restoBar != 0 ? "flex bar1" : "hide"}
+            className={restoBar != 0 ? "flex bar2" : "hide"}
             style={{ width: restoBar + "%" }}
           ></div>
         </div>
