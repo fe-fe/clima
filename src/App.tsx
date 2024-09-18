@@ -4,6 +4,8 @@ import Sobre from "./Routes/Sobre";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+const apiKey = "";
+
 function App() {
   return (
     <>
