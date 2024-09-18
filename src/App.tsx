@@ -1,35 +1,47 @@
 import Navbar from "./components/Navbar";
-import WeatherInfo from "./components/WeatherInfo";
-import Page from "./components/Page";
-import SearchBar from "./components/SearchBar";
-import { useState } from "react";
-import WeatherData from "./components/WeatherData";
+import Home from "./Routes/Home";
+import Sobre from "./Routes/Sobre";
 
-const apiKey = "a619ee62c96e43f58b2234852241509";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [wData, setWdata] = useState<WeatherData | null>(null);
-
-  async function getWdata(location: string) {
-    const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&lang=pt`
-    );
-
-    if (response.ok) {
-      const data = await response.json();
-      setWdata(data);
-    }
-  }
-
   return (
     <>
       <Navbar
-        links={[{ nome: "weatherapi", url: "https://www.weatherapi.com/" }]}
+        active={0}
+        links={[
+          {
+            nome: "home",
+            url: "/",
+            icon: null,
+            target: "",
+          },
+          {
+            nome: "sobre",
+            url: "/sobre",
+            icon: null,
+            target: "",
+          },
+          {
+            nome: "weatherapi",
+            url: "https://www.weatherapi.com/",
+            icon: <i className="fa fa-cloud" style={{ color: "white" }}></i>,
+            target: "_blank",
+          },
+          {
+            nome: "GitHub",
+            url: "https://github.com/fe-fe",
+            icon: <i className="fa fa-github" style={{ color: "white" }}></i>,
+            target: "_blank",
+          },
+        ]}
       />
-      <Page pageWidth="35vw">
-        <SearchBar onSearch={getWdata} />
-        <WeatherInfo info={wData}></WeatherInfo>
-      </Page>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<Sobre />} />
+        </Routes>
+      </Router>
     </>
   );
 }

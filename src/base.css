@@ -2,6 +2,23 @@
     .content {
         width: 90% !important;
     }
+    .nav {
+        display: block !important;
+        height: auto !important;
+    }
+    #navlinks {
+        padding-top: 1vh;
+        justify-content:left !important;
+        padding-bottom: 1vh;
+    }
+    .navlink {
+        width: auto !important;
+        margin-left: 0px !important;
+        margin-right: 1vh;
+    }
+    #apptitle {
+        padding-top: 1vh;
+    }
 }
 
 
@@ -51,6 +68,19 @@ body {
 .navtitle {
     font-size: xx-large;
     color:white;
+}
+
+.minititle {
+    background-color: #628ee0;
+    border-bottom: 0px;
+    border-radius: 10px 10px 0px 0px;
+    height: auto;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+
+.brtop {
+    border-radius: 0px 0px 10px 10px !important;
 }
 
 .bt {
@@ -187,4 +217,8 @@ body {
 
 .hide {
     display: none;
+}
+
+.mt1 {
+    margin-top: 1vh;
 }

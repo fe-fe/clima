@@ -5,7 +5,7 @@ interface Props {
 }
 
 function ContentBox({ children }: Props) {
-  return <div className="contentbox border">{children}</div>;
+  return <div className="contentbox">{children}</div>;
 }
 
 export default ContentBox;
